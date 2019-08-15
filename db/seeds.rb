@@ -27,7 +27,15 @@ end
 user = User.create(
   first_name: FFaker::Name.first_name,
   last_name: FFaker::Name.last_name,
-  email: FFaker::Internet.email
+  email: FFaker::Internet.email,
+  role: 'regular'
 )
 
 Test.all.each { |test| TestsUser.create(user: user, test: test) }
+
+admin = User.create(
+  first_name: 'Admin',
+  last_name: 'Admin',
+  email: 'admin@example.com',
+  role: 'admin'
+)
