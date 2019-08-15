@@ -6,6 +6,8 @@ class Test < ApplicationRecord
   has_many :users, through: :tests_users
 
   def self.by_category(category_title)
-    Test.includes(:category).where(categories: { title: category_title }).order(title: :desc)
+    Test.includes(:category).where(
+      categories: { title: category_title }
+    ).order(title: :desc).map(&:title)
   end
 end
