@@ -1,11 +1,25 @@
+admin = User.create(
+  first_name: 'Admin',
+  last_name: 'Admin',
+  email: 'admin@example.com',
+  role: 'admin'
+)
+
+user = User.create(
+  first_name: FFaker::Name.first_name,
+  last_name: FFaker::Name.last_name,
+  email: FFaker::Internet.email,
+  role: 'regular'
+)
+
 Category.create(title: 'Backend')
 Category.create(title: 'Frontend')
 
-Test.create(title: 'Ruby', category: Category.first)
-Test.create(title: 'Ruby on Rails', category: Category.first, level: 2)
-Test.create(title: 'JavaScript', category: Category.last)
-Test.create(title: 'CSS', category: Category.last)
-Test.create(title: 'Python', category: Category.first, level: 2)
+Test.create(title: 'Ruby', category: Category.first, author: admin)
+Test.create(title: 'Ruby on Rails', category: Category.first, level: 2, author: admin)
+Test.create(title: 'JavaScript', category: Category.last, author: admin)
+Test.create(title: 'CSS', category: Category.last, author: admin)
+Test.create(title: 'Python', category: Category.first, level: 2, author: admin)
 
 Test.all.each do |test|
   questions = []
@@ -23,19 +37,3 @@ Question.all.each do |question|
   answers.each { |answer| Answer.create(body: answer, question: question) }
   question.answers.sample.update(correct: true)
 end
-
-user = User.create(
-  first_name: FFaker::Name.first_name,
-  last_name: FFaker::Name.last_name,
-  email: FFaker::Internet.email,
-  role: 'regular'
-)
-
-Test.all.each { |test| TestsUser.create(user: user, test: test) }
-
-admin = User.create(
-  first_name: 'Admin',
-  last_name: 'Admin',
-  email: 'admin@example.com',
-  role: 'admin'
-)
