@@ -5,7 +5,9 @@ class User < ApplicationRecord
   has_many :tests_users
   has_many :tests, through: :tests_users
 
-  def tests_by_level(level)
-    self.tests.where(level: level)
-  end
+  validates :first_name, :last_name, :email, presence: true
+
+  scope :by_level, lambda { |level|
+    where(level: level)
+  }
 end
