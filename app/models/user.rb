@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: true
 
-  scope :by_level, lambda { |level|
+  scope :by_level, -> { |level|
     where(level: level)
   }
 end
