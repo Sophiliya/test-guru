@@ -1,1 +1,5 @@
 ru:
+  activerecord:
+    attributes:
+      question:
+        body: Вопрос

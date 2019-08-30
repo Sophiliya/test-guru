@@ -1,0 +1,10 @@
+<% model = question.new_record? ? [test, question] : question %>
+<%= form_with model: model do |form| %>
+  <p>
+    <%= form.hidden_field :test_id, value: test.id %>
+    <%= form.label :body %><br>
+    <%= form.text_field :body %>
+  </p>
+  <p><%= form.submit text="#{question.new_record? ? 'Создать' : 'Изменить'}"%></p>
+<% end %>
+<p><%= link_to 'Назад', test_path(test) %></p>
