@@ -8,7 +8,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    redirect_to test_question_path(@question)
   end
 
   def new
@@ -16,12 +15,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(question_params)
-    render plain: "Вопрос ##{@question.id} создан."
+    @question = @test.questions.new(question_params)
+
+    if @question.save
+      render plain: "Вопрос ##{@question.id} создан."
+    else
+      render :new
+    end
   end
 
   def destroy
     @question.destroy
+    render plain: "Вопрос ##{@question.id} удален."
   end
 
   private
@@ -39,6 +44,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_not_found
-    render plain: "Вопрос не найден"
+    render plain: "Ошибка 404: Вопрос не найден"
   end
 end

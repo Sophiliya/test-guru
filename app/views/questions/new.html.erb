@@ -1,7 +1,7 @@
 <h1><%= @test.title %></h1>
 <h2>Создать новый вопрос</h2>
 
-<form action="/tests/1/questions" method="post">
+<form action="/tests/#{@test.id}/questions" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token" type="hidden">
 
   <p>
