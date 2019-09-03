@@ -1,9 +1,9 @@
 module QuestionsHelper
-  def question_header(question, test)
+  def question_header(question)
     if question.new_record?
-      "Новый вопрос по #{test.title}"
+      "Новый вопрос по #{question.test.title}"
     else
-      "Редактировать вопрос по #{test.title}"
+      "Редактировать вопрос по #{question.test.title}"
     end
   end
 end

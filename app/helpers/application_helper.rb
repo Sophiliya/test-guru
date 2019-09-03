@@ -4,8 +4,6 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    content_tag :div do
-      content_tag :a, author, href: repo, target: "_blank"
-    end
+    link_to author, repo, target: "_blank"
   end
 end
