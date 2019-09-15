@@ -9,22 +9,10 @@
       <th>Категория</th>
       <th>Автор</th>
       <th>Количество вопросов</th>
-      <th colspan="3">Действия</th>
+      <th colspan="4">Действия</th>
     </tr>
   </thead>
   <tbody>
-    <% @tests.each do |test| %>
-      <tr>
-        <td><%= test.id %></td>
-        <td><%= test.title %></td>
-        <td align="center"><%= test.level %></td>
-        <td><%= test.category.title %></td>
-        <td><%= test.author.full_name %></td>
-        <td align="center"><%= test.questions.count %></td>
-        <td><%= link_to 'Показать', test_path(test) %></td>
-        <td><%= link_to 'Редактировать', edit_test_path(test) %></td>
-        <td><%= link_to 'Удалить', test_path(test), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @tests %>
   </tbody>
 </table>

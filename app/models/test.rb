@@ -3,8 +3,8 @@ class Test < ApplicationRecord
   belongs_to :category
 
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true }
@@ -12,7 +12,7 @@ class Test < ApplicationRecord
 
   scope :simple, -> { where('level IN (?)', [0, 1]) }
   scope :middle, -> { where('level IN (?)', (2..4)) }
-  scope :complecated, -> { where('level >= ?', 5) }
+  scope :complicated, -> { where('level >= ?', 5) }
 
   def self.by_category(category_title)
     Test.includes(:category).where(

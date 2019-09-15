@@ -1,0 +1,11 @@
+<h1><%= @test_passage.test.title %></h1>
+
+<% if @result >= 0.85 %>
+  <h3 class="result-success"><%= @test_passage.correct_questions %></h3>
+  <p>Тест успешно пройден</p>
+<% else %>
+  <h3 class="result-fail"><%= @test_passage.correct_questions %></h3>
+  <p>Тест не пройден</p>
+<% end %>
+
+<p><%= link_to 'Все тесты', tests_path %></p>

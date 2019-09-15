@@ -1,4 +1,4 @@
-cadmin = User.create(
+admin = User.create(
   first_name: 'Admin',
   last_name: 'Admin',
   email: 'admin@example.com',
