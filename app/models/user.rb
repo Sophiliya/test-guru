@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
   enum role: %i[admin regular]
 
@@ -5,7 +7,9 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
 
-  validates :first_name, :last_name, :email, presence: true
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+
+  has_secure_password
 
   def tests_by_level(level)
     self.tests.where(level: level)
