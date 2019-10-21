@@ -10,11 +10,16 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <h2 class="nav user"><%= link_to 'Тест Гуру', tests_path, class: 'main-title' %></h2>
-      <p class="nav user">Добро пожаловать, Гуру <%= current_user.first_name %>!</p>
-      <p class="nav user"><%= link_to 'Выйти', :logout, method: :delete %></p>
+    <% if user_signed_in? %>
+      <% flash.now[:notice] = "Привет, #{current_user.first_name}!" %>
+      <p class="nav user">
+        Добро пожаловать, Гуру <b><%= current_user.first_name %></b>!
+        <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+      </p>
     <% end %>
+
+
+    <%= render 'shared/flash' %>
 
     <%= yield %>
     <%= render 'shared/footer'%>

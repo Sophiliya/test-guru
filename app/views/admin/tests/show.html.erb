@@ -1,0 +1,36 @@
+<p>
+  <strong>Название: </strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong>Уровень: </strong>
+  <%= @test.level %>
+</p>
+
+
+<h2>Вопросы</h2>
+<%= link_to 'Добавить вопрос', new_admin_test_question_path(@test)%>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Вопрос</th>
+      <th colspan="3">Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @test.questions.each do |question| %>
+      <tr>
+        <td><%= question.id %></td>
+        <td><%= question.body %></td>
+        <td><%= link_to 'Ответы', admin_question_answers_path(question) %></td>
+        <td><%= link_to 'Редактировать', edit_admin_question_path(question) %></td>
+        <td><%= link_to 'Удалить', admin_question_path(question), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to 'Все тесты', admin_tests_path %></p>

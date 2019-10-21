@@ -1,0 +1,22 @@
+<h1>Тесты</h1>
+
+<p>
+  <%= link_to 'Новый тест', new_admin_test_path %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Уровень</th>
+      <th>Категория</th>
+      <th>Автор</th>
+      <th>Количество вопросов</th>
+      <th colspan="3">Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
+</table>

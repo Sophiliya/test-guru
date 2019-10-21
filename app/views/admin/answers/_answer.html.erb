@@ -1,0 +1,7 @@
+<tr>
+  <td>*</td>
+  <td><%= answer.body %></td>
+  <td align="center"><%= answer.correct %></td>
+  <td><%= link_to 'Редактировать', edit_admin_answer_path(answer) %></td>
+  <td><%= link_to 'Удалить', admin_answer_path(answer), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+</tr>
