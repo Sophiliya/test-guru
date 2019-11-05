@@ -2,11 +2,8 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update start destroy]
 
   def index
-    if user_signed_in? && current_user.sign_in_count == 1
-      flash.now[:notice] = "Привет, #{current_user.first_name}!"
-    end
-
     @tests = Test.all
+    flash.now[:notice] = "Привет, #{current_user.first_name}!"
   end
 
   def show
