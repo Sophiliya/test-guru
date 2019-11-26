@@ -1,23 +1,23 @@
 <p>
-  <strong>Название: </strong>
+  <strong><%= t('activerecord.attributes.test.title') %>: </strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <strong>Уровень: </strong>
+  <strong><%= t('activerecord.attributes.test.level') %>: </strong>
   <%= @test.level %>
 </p>
 
 
-<h2>Вопросы</h2>
-<%= link_to 'Добавить вопрос', new_admin_test_question_path(@test)%>
+<h2><%= t('.header') %></h2>
+<%= link_to t('buttons.add_question'), new_admin_test_question_path(@test)%>
 
 <table>
   <thead>
     <tr>
       <th>ID</th>
-      <th>Вопрос</th>
-      <th colspan="3">Действия</th>
+      <th><%= t('activerecord.attributes.question.body') %></th>
+      <th colspan="3"><%= t('actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -25,12 +25,12 @@
       <tr>
         <td><%= question.id %></td>
         <td><%= question.body %></td>
-        <td><%= link_to 'Ответы', admin_question_answers_path(question) %></td>
-        <td><%= link_to 'Редактировать', edit_admin_question_path(question) %></td>
-        <td><%= link_to 'Удалить', admin_question_path(question), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%= link_to t('buttons.answers'), admin_question_answers_path(question) %></td>
+        <td><%= link_to t('buttons.edit'), edit_admin_question_path(question) %></td>
+        <td><%= link_to t('buttons.delete'), admin_question_path(question), method: :delete, data: { confirm: t('confirmations.sure') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<p><%= link_to 'Все тесты', admin_tests_path %></p>
+<p><%= link_to t('buttons.all_tests'), admin_tests_path %></p>

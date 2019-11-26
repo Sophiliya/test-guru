@@ -30,4 +30,56 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: 'Hello'
+  welcome: 'Welcome Guru '
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Update Test'
+    select:
+      prompt: 'Please select category'
+  activerecord:
+    attributes:
+      test:
+        category_id: 'Category'
+      category:
+        title: 'Category'
+      question:
+        body: 'Question'
+
+  tests:
+    index:
+      header: 'Tests'
+      author: 'Author'
+      cnt_questions: 'Number of questions'
+  test_passages:
+    show:
+      header: 'Passing the test on '
+      question: 'Question'
+    result:
+      success: 'The test was successfully passed'
+      fail: 'The test was failed'
+
+  admin:
+    tests:
+      show:
+        header: 'Questions'
+    nav:
+      header: 'Test Guru Admin Panel'
+
+  actions: 'Actions'
+  buttons:
+    start: 'Start'
+    next: 'Next'
+    all_tests: 'All tests'
+    logout: 'Log out'
+    new_test: 'New test'
+    show: 'Show'
+    edit: 'Edit'
+    delete: 'Delete'
+    add_question: 'Add question'
+    answers: 'Answers'
+    more: 'more'
+  confirmations:
+    sure: 'Are you sure?'

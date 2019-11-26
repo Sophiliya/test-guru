@@ -1,15 +1,15 @@
-<h1>Тесты</h1>
+<h1><%= t('tests.index.header') %></h1>
 
 <table>
   <thead>
     <tr>
       <th>ID</th>
-      <th>Название</th>
-      <th>Уровень</th>
-      <th>Категория</th>
-      <th>Автор</th>
-      <th>Количество вопросов</th>
-      <th>Действия</th>
+      <th><%= t('activerecord.attributes.test.title') %></th>
+      <th><%= t('activerecord.attributes.test.level') %></th>
+      <th><%= t('activerecord.attributes.category.title') %></th>
+      <th><%= t('tests.index.author') %></th>
+      <th><% t('tests.index.cnt_questions') %></th>
+      <th><%= t('actions') %></th>
     </tr>
   </thead>
   <tbody>

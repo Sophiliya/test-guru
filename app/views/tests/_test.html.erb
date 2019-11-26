@@ -5,5 +5,5 @@
   <td><%= test.category.title %></td>
   <td><%= test.author&.full_name %></td>
   <td align="center"><%= test.questions.count %></td>
-  <td><%= button_to 'Старт', start_test_path(test) %></td>
+  <td><%= button_to t('buttons.start'), start_test_path(test) %></td>
 </tr>

@@ -2,6 +2,11 @@ class Admin::BaseController < ApplicationController
   layout 'admin'
 
   before_action :admin_required!
+  before_action :set_locale
+
+  def default_url_options
+    { lang: I18n.locale }
+  end
 
   private
 
@@ -9,5 +14,9 @@ class Admin::BaseController < ApplicationController
     if !current_user.admin?
       redirect_to root_path, alert: "Вы не авторизованы для просмотра этой страницы."
     end
+  end
+
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 end

@@ -4,7 +4,7 @@ module TestPassagesHelper
   end
 
   def show_message
-    content_tag :p, "Тест #{result_type == 'success' ? 'успешно пройден' : 'не пройден'}"
+    content_tag :p, "#{result_type == 'success' ? t('test_passages.result.success') : t('test_passages.result.fail')}"
   end
 
   private
