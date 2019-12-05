@@ -2,10 +2,9 @@ class Admin::BaseController < ApplicationController
   layout 'admin'
 
   before_action :admin_required!
-  before_action :set_locale
 
   def default_url_options
-    { lang: I18n.locale }
+    { lang: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
   private
