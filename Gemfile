@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Auth
 gem 'devise', '~> 4.0'
 
+# Localization
+gem 'rails-i18n'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

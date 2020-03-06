@@ -1,7 +1,7 @@
-<h1>Прохождение теста по <%= @test_passage.test.title %></h1>
+<h1><%= "#{t('test_passages.show.header')} #{@test_passage.test.title}" %></h1>
 
 <p>
-  <%= "Вопрос: #{@number}/#{@test_passage.test.questions.count}" %>
+  <%= "#{t('test_passages.show.question')}: #{@number}/#{@test_passage.test.questions.count}" %>
 </p>
 
 <b>
@@ -15,5 +15,5 @@
       <%= b.label %>
     </p>
   <% end %>
-  <p><%= form.submit "Следующий" %></p>
+  <p><%= form.submit t('buttons.next') %></p>
 <% end %>

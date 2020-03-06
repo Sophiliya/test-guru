@@ -11,10 +11,10 @@
 
   <body>
     <% if user_signed_in? %>
-      <% flash.now[:notice] = "Привет, #{current_user.first_name}!" %>
+      <% flash.now[:notice] = "#{t('hello')} #{current_user.first_name}!" %>
       <p class="nav user">
-        Добро пожаловать, Гуру <b><%= current_user.first_name %></b>!
-        <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+         <%= t('welcome') %><b><%= current_user.first_name %></b>!
+        <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete %>
       </p>
     <% end %>
 

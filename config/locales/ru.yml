@@ -1,5 +1,55 @@
 ru:
-  activerecord:
-    attributes:
+  hello: 'Привет, '
+  welcome: 'Добро пожаловать, Гуру '
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Обновить тест'
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
+      category:
+        title: 'Категория'
       question:
-        body: Вопрос
+        body: 'Вопрос'
+    select:
+      prompt: 'Выберите категорию'
+
+  tests:
+    index:
+      header: 'Тесты'
+      author: 'Автор'
+      cnt_questions: 'Количество вопросов'
+  test_passages:
+    show:
+      header: 'Прохождение теста по '
+      question: 'Вопрос'
+    result:
+      success: 'Тест успешно пройден'
+      fail: 'Тест не пройден'
+
+  admin:
+    tests:
+      show:
+        header: 'Вопросы'
+    nav:
+      header: 'Панель Админа Тест Гуру'
+
+  actions: 'Действия'
+  buttons:
+    start: 'Старт'
+    next: 'Следующий'
+    all_tests: 'Все тесты'
+    logout: 'Выйти'
+    new_test: 'Новый тест'
+    show: 'Показать'
+    edit: 'Редактировать'
+    delete: 'Удалить'
+    add_question: 'Добавить вопрос'
+    answers: 'Ответы'
+    more: 'еще'
+  confirmations:
+    sure: 'Вы уверены?'
