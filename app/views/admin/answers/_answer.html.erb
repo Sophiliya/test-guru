@@ -2,6 +2,6 @@
   <td>*</td>
   <td><%= answer.body %></td>
   <td align="center"><%= answer.correct %></td>
-  <td><%= link_to 'Редактировать', edit_admin_answer_path(answer) %></td>
-  <td><%= link_to 'Удалить', admin_answer_path(answer), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  <td><%= link_to 'Редактировать', edit_admin_answer_path(answer), class: "btn btn-warning" %></td>
+  <td><%= link_to 'Удалить', admin_answer_path(answer), method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger" %></td>
 </tr>
