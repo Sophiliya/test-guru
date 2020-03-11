@@ -1,36 +1,32 @@
-<p>
-  <strong><%= t('activerecord.attributes.test.title') %>: </strong>
-  <%= @test.title %>
-</p>
+<div class="row justify-content-center">
+  <div class="col">
+    <div class="test-header">
+      <h4><%= @test.title %></h4>
+      <h4><%= "#{t('activerecord.attributes.test.level')}: #{@test.level}"%></h4>
+    </div>
 
-<p>
-  <strong><%= t('activerecord.attributes.test.level') %>: </strong>
-  <%= @test.level %>
-</p>
+    <h4 align="center"><%= t('.header') %></h4>
+    <%= link_to t('buttons.add_question'), new_admin_test_question_path(@test), class: "btn btn-primary mb-3"%>
 
-
-<h2><%= t('.header') %></h2>
-<%= link_to t('buttons.add_question'), new_admin_test_question_path(@test)%>
-
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th><%= t('activerecord.attributes.question.body') %></th>
-      <th colspan="3"><%= t('actions') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @test.questions.each do |question| %>
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= question.id %></td>
-        <td><%= question.body %></td>
-        <td><%= link_to t('buttons.answers'), admin_question_answers_path(question) %></td>
-        <td><%= link_to t('buttons.edit'), edit_admin_question_path(question) %></td>
-        <td><%= link_to t('buttons.delete'), admin_question_path(question), method: :delete, data: { confirm: t('confirmations.sure') } %></td>
+        <th>ID</th>
+        <th><%= t('activerecord.attributes.question.body') %></th>
+        <th colspan="3"><%= t('actions') %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p><%= link_to t('buttons.all_tests'), admin_tests_path %></p>
+      </thead>
+      <tbody>
+      <% @test.questions.each do |question| %>
+        <tr>
+          <td><%= question.id %></td>
+          <td><%= question.body %></td>
+          <td><%= link_to t('buttons.answers'), admin_question_answers_path(question), class: "btn btn-info" %></td>
+          <td><%= link_to t('buttons.edit'), edit_admin_question_path(question), class: "btn btn-warning" %></td>
+          <td><%= link_to t('buttons.delete'), admin_question_path(question), method: :delete, data: { confirm: t('confirmations.sure') }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -3,7 +3,6 @@ class Admin::TestsController < Admin::BaseController
 
   def index
     @tests = Test.all
-    flash.now[:notice] = "Привет, #{current_user.first_name}!"
   end
 
   def show

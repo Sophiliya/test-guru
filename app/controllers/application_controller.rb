@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    resource.is_a?(Admin) ? admin_tests_path : root_path
+    resource.is_a?(Admin) ? admin_root_path : root_path
   end
 
   def set_locale

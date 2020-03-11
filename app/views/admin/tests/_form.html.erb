@@ -1,23 +1,17 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
-  <%= render 'shared/errors', resource: @test %>
+  <div class="form-group">
+    <%= render 'shared/errors', resource: @test %>
 
-  <p>
     <%= form.number_field :author_id, value: current_user.id, id: :author_id, hidden: true %>
-  </p>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :test_title %>
-  </p>
 
-  <p>
-    <%= form.label :level %><br>
-    <%= form.number_field :level, id: :test_level %>
-  </p>
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :test_title, class: "form-control mb-3" %>
 
-  <p>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-  </p>
+    <%= form.label :level %>
+    <%= form.number_field :level, id: :test_level, class: "form-control mb-3" %>
 
-  <p><%= form.submit %></p>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %><br>
+    <%= form.submit 'Создать', class: "btn btn-primary mt-3" %>
+  </div>
 <% end %>

@@ -1,6 +1,12 @@
-<h1><%= @test_passage.test.title %></h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-md-4">
+      <h1><%= @test_passage.test.title %></h1>
 
-<%= show_score %>
-<%= show_message %>
+      <%= show_score %>
+      <%= show_message %>
 
-<p><%= link_to t('buttons.all_tests'), tests_path %></p>
+      <p><%= link_to t('buttons.all_tests'), tests_path %></p>
+    </div>
+  </div>
+</div>

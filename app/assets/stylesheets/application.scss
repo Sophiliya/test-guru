@@ -1,0 +1,16 @@
+@import "bootstrap";
+
+.footer {
+  background: none repeat scroll 0 0 white;
+  border-top: 1px solid #e7eaec;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  position: relative;
+  right: 0;
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+}
