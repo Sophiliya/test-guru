@@ -15,7 +15,7 @@
         <% @gists.each do |gist| %>
           <tr>
             <td><%= gist.id %></td>
-            <td><%= link_to "#{gist.question.body[0..24]}...", admin_question_path(gist.question) %></td>
+            <td><%= link_to "#{gist.question.body.truncate(25)}...", admin_question_path(gist.question) %></td>
             <td><a href="#{gist.url}" target="_blank"><%= gist.url %></a></td>
             <td><%= gist.user.email %></td>
           </tr>

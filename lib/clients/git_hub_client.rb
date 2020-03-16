@@ -1,6 +1,8 @@
 class GitHubClient
   ACCESS_TOKEN  = ENV['GITHUB_ACCESS_TOKEN']
 
+  attr_reader :http_client
+
   def initialize
     @http_client = setup_octokit_client
   end
