@@ -1,4 +1,5 @@
 class GistQuestionService
+
   def initialize(question, client: nil)
     @question = question
     @test     = @question.test
@@ -6,13 +7,13 @@ class GistQuestionService
   end
 
   def call
-    gist = @client.create_gist(gist_params)
+    @client.create_gist(gist_params)
+  end
 
-    if success?
-      { success: true, gist_url: gist[:html_url] }
-    else
-      { success: false, errors: gist.errors }
-    end
+  def success?
+    return unless @client.http_client.last_response
+
+    @client.http_client.last_response.status == 201 ? true : false
   end
 
   private
@@ -32,9 +33,5 @@ class GistQuestionService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
-  end
-
-  def success?
-    @client.http_client.last_response.status == 201 ? true : false
   end
 end
