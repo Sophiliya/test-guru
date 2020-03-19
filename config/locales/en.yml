@@ -60,6 +60,14 @@ en:
     result:
       success: 'The test was successfully passed'
       fail: 'The test was failed'
+    gist:
+      success: 'Gist was successfully created: %{url}'
+      failure: 'An error occured while saving gist!'
+      create:
+        message: 'A question about %{test_title} from TestGuru'
+  gists:
+    index:
+      header: 'Gists'
 
   admin:
     tests:

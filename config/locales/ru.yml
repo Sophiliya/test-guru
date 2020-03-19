@@ -40,6 +40,14 @@ ru:
     result:
       success: 'Тест успешно пройден'
       fail: 'Тест не пройден'
+    gist:
+      success: 'Gist успешно сохранен: %{url}'
+      failure: 'Во время сохранения gist произошла ошибка'
+      create:
+        message: 'Вопрос по %{test_title} от TestGuru'
+  gists:
+    index:
+      header: 'Gist файлы'
 
   admin:
     tests:
@@ -66,3 +74,4 @@ ru:
     more: 'еще'
   confirmations:
     sure: 'Вы уверены?'
+
