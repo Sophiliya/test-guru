@@ -5,8 +5,12 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <th>ID</th>
-        <th><%= t('activerecord.attributes.test.title') %></th>
+<!--        <th>ID</th>-->
+        <th class="sort-by-title pointer">
+          <%= t('activerecord.attributes.test.title') %>
+          <%= octicon 'arrow-up', class: "text-success hide" %>
+          <%= octicon 'arrow-down', class: "text-success" %>
+        </th>
         <th><%= t('activerecord.attributes.test.level') %></th>
         <th><%= t('activerecord.attributes.category.title') %></th>
         <th><%= t('tests.index.author') %></th>
