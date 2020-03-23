@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "typography/icons";
+@import "global";
 
 .footer {
   background: none repeat scroll 0 0 white;
@@ -13,4 +15,12 @@
 .test-header {
   display: flex;
   justify-content: space-between;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: forestgreen;
 }
