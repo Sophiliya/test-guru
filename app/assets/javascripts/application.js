@@ -24,7 +24,9 @@ document.addEventListener('turbolinks:load', function () {
     let passwordField = document.querySelector('#user_password')
     let messageBox    = document.querySelector('p.confirmation-message')
 
-    if (this.value == passwordField.value) {
+    if (this.value == '') {
+      messageBox.innerText = ''
+    } else if (this.value == passwordField.value) {
       messageBox.innerText = 'Passwords are equal'
       messageBox.classList.remove('red')
       messageBox.classList.add('green')
