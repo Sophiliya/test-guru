@@ -2,6 +2,8 @@
   <div class="col">
     <h1 align="center"><%= t('tests.index.header') %></h1>
 
+    <%= render 'shared/errors', resource: @test  %>
+
     <table class="table table-hover">
       <thead>
       <tr>

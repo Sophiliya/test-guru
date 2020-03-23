@@ -53,6 +53,8 @@ ru:
     tests:
       show:
         header: 'Вопросы'
+      form_inline:
+        submit: 'Ok'
     nav:
       header: 'Панель Админа Тест Гуру'
 
