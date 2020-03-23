@@ -1,5 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
+    <%= content_tag :div, id: 'progress-bar', data: { questions_count: @test_passage.test.questions.count, question_number: @number } do %>
+      <div id="progress-bar-line"></div>
+    <% end %>
+
     <div class="">
       <h1 align="center"><%= "#{t('test_passages.show.header')} #{@test_passage.test.title}" %></h1>
 

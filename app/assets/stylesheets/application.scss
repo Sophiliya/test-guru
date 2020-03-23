@@ -24,3 +24,16 @@
 .green {
   color: forestgreen;
 }
+
+#progress-bar {
+  width: 100%;
+  background-color: lightgrey;
+}
+
+#progress-bar-line {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+  text-align: center;
+  color: #ffffff;
+}
