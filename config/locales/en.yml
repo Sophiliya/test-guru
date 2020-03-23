@@ -73,6 +73,8 @@ en:
     tests:
       show:
         header: 'Questions'
+      form_inline:
+        submit: 'Ok'
     nav:
       header: 'Test Guru Admin Panel'
 
