@@ -7,6 +7,7 @@
 
     <h4 align="center"><%= t('.header') %></h4>
     <%= link_to t('buttons.add_question'), new_admin_test_question_path(@test), class: "btn btn-primary mb-3"%>
+    <%= link_to t('buttons.edit'), edit_admin_test_path(@test), class: "btn btn-warning mb-3 edit-test-link" %>
 
     <table class="table">
       <thead>
