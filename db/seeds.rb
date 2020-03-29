@@ -1,21 +1,3 @@
-admin = User.create(
-  first_name: 'Admin',
-  last_name: 'Admin',
-  email: 'admin@example.com',
-  password: '123456',
-  password_confirmation: '123456',
-  role: 'admin'
-)
-
-admin.confirm
-
-user = User.create(
-  first_name: FFaker::Name.first_name,
-  last_name: FFaker::Name.last_name,
-  email: FFaker::Internet.email,
-  role: 'regular'
-)
-
 Category.create(title: 'Backend')
 Category.create(title: 'Frontend')
 
@@ -41,3 +23,26 @@ Question.all.each do |question|
   answers.each { |answer| Answer.create(body: answer, question: question) }
   question.answers.sample.update(correct: true)
 end
+
+admin = User.find_by(email: 'admin@example.com')
+
+unless admin do
+  admin = User.create(
+    first_name: 'Admin',
+    last_name: 'Admin',
+    email: 'admin@example.com',
+    password: '123456',
+    password_confirmation: '123456',
+    role: 'admin'
+  )
+
+  admin.confirm
+end
+  
+
+# user = User.create(
+#   first_name: FFaker::Name.first_name,
+#   last_name: FFaker::Name.last_name,
+#   email: FFaker::Internet.email,
+#   role: 'regular'
+# )
