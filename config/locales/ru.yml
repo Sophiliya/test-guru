@@ -20,13 +20,13 @@ ru:
   activerecord:
     attributes:
       test:
-        title: 'Тест'
-        level: 'уровень'
-        category_id: 'Category'
+        title: 'Название теста'
+        level: 'Уровень'
+        category_id: 'Категория'
       category:
-        title: 'Category'
+        title: 'Категория'
       question:
-        body: 'Question'
+        body: 'Вопрос'
 
   tests:
     index:
