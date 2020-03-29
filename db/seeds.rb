@@ -26,7 +26,7 @@ end
 
 admin = User.find_by(email: 'admin@example.com')
 
-unless admin do
+unless admin
   admin = User.create(
     first_name: 'Admin',
     last_name: 'Admin',
@@ -38,7 +38,7 @@ unless admin do
 
   admin.confirm
 end
-  
+
 
 # user = User.create(
 #   first_name: FFaker::Name.first_name,
