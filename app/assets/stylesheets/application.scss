@@ -2,6 +2,10 @@
 @import "typography/icons";
 @import "global";
 
+.main {
+  min-height: 500px;
+}
+
 .footer {
   background: none repeat scroll 0 0 white;
   border-top: 1px solid #e7eaec;
@@ -23,6 +27,14 @@
 
 .green {
   color: forestgreen;
+}
+
+.center {
+  text-align: center;
+}
+
+.navbar-link {
+  color: #007bff !important;
 }
 
 #progress-bar {
