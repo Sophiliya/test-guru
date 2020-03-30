@@ -4,7 +4,7 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('welcome') %><b><%= current_user.first_name %></b>!
-      <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, class: '' %>
+      <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
     <% else %>
       <%= link_to t('buttons.login'), user_session_path %>
       <%= link_to t('buttons.signup'), new_user_registration_path %>
