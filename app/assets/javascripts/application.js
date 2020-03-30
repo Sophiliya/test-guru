@@ -44,7 +44,7 @@ function setProgressBar() {
   let progressBar = document.getElementById('progress-bar')
 
   if (progressBar) {
-    let questionNumber = progressBar.dataset.questionNumber;
+    let questionNumber = progressBar.dataset.questionNumber - 1;
     let questionsCount = progressBar.dataset.questionsCount;
     let width = 100 * questionNumber/questionsCount;
 

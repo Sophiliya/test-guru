@@ -42,7 +42,7 @@ class TestPassagesController < ApplicationController
   end
 
   def set_current_question_number
-    @number = @test_passage.test.questions.order(:id).index(@test_passage.current_question)
+    @number = @test_passage.test.questions.order(:id).index(@test_passage.current_question) + 1
   end
 
   def create_gist(url)
