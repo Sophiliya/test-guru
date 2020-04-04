@@ -4,4 +4,16 @@ class HomeController < ApplicationController
       flash.now[:notice] = "Привет, #{current_user.email}!"
     end
   end
+
+  def feedback
+    FeedbacksMailer.send_feedback(feedback_params).deliver
+
+    redirect_to root_path
+  end
+
+  private
+
+  def feedback_params
+    params.permit(:name, :email, :body)
+  end
 end

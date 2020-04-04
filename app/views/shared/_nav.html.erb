@@ -1,5 +1,13 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <%= link_to 'Test Guru', root_path, class: 'navbar-brand' %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to t('buttons.feedback'), '', class: 'btn', id: 'feedback-link', data: { toggle: "modal", target: "#feedbackModal" } %>
+      </li>
+    </ul>
+  </div>
 
   <span class="navbar-text">
     <% if user_signed_in? %>
