@@ -38,6 +38,10 @@ document.addEventListener('turbolinks:load', function () {
   })
 
   setProgressBar();
+
+  $('#feedback-link').on('click', function () {
+    $('#feedback-modal').modal('show')
+  })
 })
 
 function setProgressBar() {
