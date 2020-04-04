@@ -15,6 +15,10 @@ ru:
         title: 'Категория'
       question:
         body: 'Вопрос'
+      feedback_modal:
+        name: 'Ваше имя'
+        email: 'Email'
+        body: 'Описание'
     select:
       prompt: 'Выберите категорию'
   activerecord:
@@ -74,6 +78,10 @@ ru:
     add_question: 'Добавить вопрос'
     answers: 'Ответы'
     more: 'еще'
+    feedback: 'Обратная связь'
+    submit: 'Отправить'
   confirmations:
     sure: 'Вы уверены?'
+  feedback:
+    title: 'Форма обратной связи'
 

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
   root 'home#index'
 
-  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
+  post 'feedback' => 'home#feedback'
 
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do

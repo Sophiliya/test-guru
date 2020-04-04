@@ -39,6 +39,10 @@ en:
         update: 'Update Test'
     select:
       prompt: 'Please select category'
+    feedback_modal:
+      name: 'Your name'
+      email: 'Email'
+      body: 'Description'
   activerecord:
     attributes:
       test:
@@ -91,5 +95,9 @@ en:
     add_question: 'Add question'
     answers: 'Answers'
     more: 'more'
+    feedback: 'Feedback'
+    submit: 'Submit'
   confirmations:
     sure: 'Are you sure?'
+  feedback:
+    title: 'Feedback form'
