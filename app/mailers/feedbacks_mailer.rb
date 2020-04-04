@@ -4,7 +4,7 @@ class FeedbacksMailer < ApplicationMailer
     @email = params[:email]
     @body = params[:body]
 
-    admin_email = User.admin.first.email
+    admin_email = Admin.first.email
 
     mail to: [admin_email, ENV['APP_EMAIL']], subject: 'Feedback from TestGuru user'
   end
