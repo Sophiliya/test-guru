@@ -7,7 +7,7 @@ class TestPassage < ApplicationRecord
   before_save :before_save_set_next_question, unless: :new_record?
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += 1 if answer_ids.present? && correct_answer?(answer_ids)
     save
   end
 

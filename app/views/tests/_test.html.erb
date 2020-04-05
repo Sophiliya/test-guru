@@ -5,5 +5,6 @@
   <td><%= test.category.title %></td>
   <td><%= test.author&.full_name %></td>
   <td align="center"><%= test.questions.count %></td>
-  <td><%= button_to t('buttons.start'), start_test_path(test), class: "btn btn-primary" %></td>
+  <% disabled = test.questions.any? ? false : true %>
+  <td><%= button_to t('buttons.start'), start_test_path(test), class: "btn btn-primary", disabled: disabled %></td>
 </tr>
