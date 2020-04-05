@@ -1,6 +1,6 @@
 class Admin::AnswersController < Admin::BaseController
-  before_action :set_question
   before_action :set_answer, only: %i[show edit update destroy]
+  before_action :set_question
 
   def index
     @answers = @question.answers
@@ -17,7 +17,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_question_answers_path(@question)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_test_path(@question.test)
+      redirect_to admin_question_answers_path(@question)
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to admin_test_path(@question.test)
+    redirect_to admin_question_answers_path(@question)
   end
 
   private
@@ -45,11 +45,11 @@ class Admin::AnswersController < Admin::BaseController
     params.require(:answer).permit(:body, :correct)
   end
 
-  def set_question
-    @question = Question.find(params[:question_id])
-  end
-
   def set_answer
     @answer = Answer.find(params[:id])
+  end
+
+  def set_question
+    @question = params[:question_id] ? Question.find(params[:question_id]) : @answer.question
   end
 end

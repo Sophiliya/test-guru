@@ -31,6 +31,9 @@ ru:
         title: 'Категория'
       question:
         body: 'Вопрос'
+      answer:
+        body: 'Ответ'
+        correct: 'Правильный'
 
   tests:
     index:
