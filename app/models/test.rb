@@ -5,6 +5,7 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
+  has_many :badges
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true }
