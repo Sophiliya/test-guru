@@ -9,10 +9,6 @@
         <th></th>
         <th><%= t('activerecord.attributes.badge.name') %></th>
         <th><%= t('activerecord.attributes.badge.count') %></th>
-        <th><%= t('activerecord.attributes.badge.attempts_number') %></th>
-        <th><%= t('activerecord.attributes.badge.level') %></th>
-        <th><%= t('activerecord.attributes.category.title') %></th>
-        <th><%= t('activerecord.attributes.test.title') %></th>
       </tr>
       </thead>
       <tbody>
@@ -22,10 +18,6 @@
           <td><%= image_tag ub.badge.image, class: "user-badge-img" %></td>
           <td><%= ub.badge.name %></td>
           <td><%= ub.count %></td>
-          <td><%= ub.badge.attempts_number ? ub.badge.attempts_number : ' - ' %></td>
-          <td><%= ub.badge.level ? ub.badge.level : ' - ' %></td>
-          <td><%= ub.badge.category ? ub.badge.category.title : ' - ' %></td>
-          <td><%= ub.badge.test ? ub.badge.test.title : ' - ' %></td>
         </tr>
       <% end %>
       </tbody>
