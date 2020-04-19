@@ -1,15 +1,8 @@
 <tr>
   <td><%= badge.id %></td>
-  <td><%= image_tag badge.image, class: "admin-badge-img" %></td>
   <td><%= badge.name %></td>
   <td><%= badge.attempts_number ? badge.attempts_number : t('badges.index.attempts_number.unlimited') %></td>
   <td><%= badge.level ? badge.level : t('badges.index.all') %></td>
   <td><%= badge.category ? badge.category.title : t('badges.index.all') %></td>
   <td><%= badge.test ? badge.test.title : t('badges.index.all') %></td>
-  <td>
-    <%= link_to t('buttons.edit'), edit_admin_badge_path(badge), class: "btn btn-warning" %>
-  </td>
-  <td>
-    <%= link_to t('buttons.delete'), admin_badge_path(badge), method: :delete, data: { confirm: t('confirmations.sure') }, class: "btn btn-danger" %>
-  </td>
 </tr>

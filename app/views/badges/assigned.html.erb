@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+  <div class="col">
+    <h1 align="center"><%= t('badges.user.header') %></h1>
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th><%= t('activerecord.attributes.badge.name') %></th>
+        <th><%= t('activerecord.attributes.badge.count') %></th>
+        <th><%= t('activerecord.attributes.badge.attempts_number') %></th>
+        <th><%= t('activerecord.attributes.badge.level') %></th>
+        <th><%= t('activerecord.attributes.category.title') %></th>
+        <th><%= t('activerecord.attributes.test.title') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @badges.each do |badge| %>
+        <tr>
+          <td><%= badge.id %></td>
+          <td><%= badge.name %></td>
+          <td><%= badge.attempts_number ? badge.attempts_number : t('badges.index.attempts_number.unlimited') %></td>
+          <td><%= badge.level ? badge.level : t('badges.index.all') %></td>
+          <td><%= badge.category ? badge.category.title : t('badges.index.all') %></td>
+          <td><%= badge.test ? badge.test.title : t('badges.index.all') %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

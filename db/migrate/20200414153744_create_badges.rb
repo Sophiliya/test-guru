@@ -6,6 +6,9 @@ class CreateBadges < ActiveRecord::Migration[5.2]
       t.integer :attempts_number
       t.integer :level
 
+      t.string :rule_code
+      t.integer :rule_priority
+
       t.references :category
       t.references :test
 

@@ -40,6 +40,7 @@ ru:
         level: 'Уровень'
         category_id: 'Категория'
         test_id: 'Тест'
+        count: 'Количество'
 
   tests:
     index:
@@ -53,6 +54,7 @@ ru:
     result:
       success: 'Тест успешно пройден'
       fail: 'Тест не пройден'
+      badge: 'Поздравляем! Вы заработали бейдж: %{title}'
     gist:
       success: 'Gist успешно сохранен: %{url}'
       failure: 'Во время сохранения gist произошла ошибка'
@@ -71,6 +73,8 @@ ru:
       header: 'Новый бейдж'
     edit:
       header: 'Редактировать бейдж %{badge_name}'
+  user_badges:
+    header: 'Мои бейджи'
 
   admin:
     tests:

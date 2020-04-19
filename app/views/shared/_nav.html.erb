@@ -4,7 +4,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
+        <%= link_to t('tests.index.header'), tests_path, class: 'btn' %>
+      </li>
+      <li class="nav-item active">
         <%= link_to t('buttons.feedback'), '', class: 'btn', id: 'feedback-link', data: { toggle: "modal", target: "#feedbackModal" } %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to t('badges.index.header'), badges_path, class: 'btn' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to t('user_badges.header'), user_badges_path, class: 'btn' %>
       </li>
     </ul>
   </div>

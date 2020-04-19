@@ -57,6 +57,7 @@ en:
         level: 'Level'
         category_id: 'Category'
         test_id: 'Test'
+        count: 'Number'
 
   tests:
     index:
@@ -70,6 +71,7 @@ en:
     result:
       success: 'The test was successfully passed'
       fail: 'The test was failed'
+      badge: 'Congratulations! You own a badge: %{title}'
     gist:
       success: 'Gist was successfully created: %{url}'
       failure: 'An error occured while saving gist!'
@@ -86,6 +88,8 @@ en:
       all: 'all'
     new:
       header: 'New badge'
+  user_badges:
+    header: 'My badges'
 
   admin:
     tests:
