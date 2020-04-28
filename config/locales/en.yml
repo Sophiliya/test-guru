@@ -47,6 +47,7 @@ en:
     attributes:
       test:
         category_id: 'Category'
+        duration: 'Duration (min)'
       category:
         title: 'Category'
       question:

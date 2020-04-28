@@ -27,6 +27,7 @@ ru:
         title: 'Название теста'
         level: 'Уровень'
         category_id: 'Категория'
+        duration: 'Продолжительность (мин)'
       category:
         title: 'Категория'
       question:
