@@ -62,7 +62,7 @@ function setTestTimer() {
   let duration = $('.timer').data('duration')
 
   if (duration) {
-    let countDownDateTime = new Date().getTime() + duration * 20 * 1000
+    let countDownDateTime = new Date().getTime() + duration * 60 * 1000
 
     let t = setInterval(function() {
       let dateTimeNow = new Date().getTime();

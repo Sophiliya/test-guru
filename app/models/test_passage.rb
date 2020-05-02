@@ -15,6 +15,10 @@ class TestPassage < ApplicationRecord
     current_question.nil? ? true : false
   end
 
+  def time_expired?
+    created_at + test.duration * 60 <= Time.zone.now ? true : false
+  end
+
   def result
     correct_questions.to_f/test.questions.count
   end

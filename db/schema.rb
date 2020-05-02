@@ -24,21 +24,6 @@ ActiveRecord::Schema.define(version: 2020_04_28_170020) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "badges", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.integer "attempts_number"
-    t.integer "level"
-    t.string "rule_code"
-    t.integer "rule_priority"
-    t.bigint "category_id"
-    t.bigint "test_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_badges_on_category_id"
-    t.index ["test_id"], name: "index_badges_on_test_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
@@ -88,16 +73,6 @@ ActiveRecord::Schema.define(version: 2020_04_28_170020) do
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
   end
 
-  create_table "user_badges", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "badge_id"
-    t.integer "count", default: 1
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
-    t.index ["user_id"], name: "index_user_badges_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -129,6 +104,4 @@ ActiveRecord::Schema.define(version: 2020_04_28_170020) do
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
-  add_foreign_key "user_badges", "badges"
-  add_foreign_key "user_badges", "users"
 end
