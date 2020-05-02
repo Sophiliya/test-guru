@@ -2,13 +2,13 @@ class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist]
   before_action :set_current_question_number, only: :show
-  before_action :set_result, only: :result
 
   def show
   end
 
   def result
-    @badge = SetBadgeService.new(test_passage: @test_passage, user: current_user).call
+    @result = @test_passage.result
+    @badge  = SetBadgeService.new(test_passage: @test_passage, user: current_user).call
     TestsMailer.completed_test(@test_passage).deliver_now
   end
 
@@ -48,9 +48,5 @@ class TestPassagesController < ApplicationController
 
   def create_gist(url)
     current_user.gists.create(url: url, question: @test_passage.current_question)
-  end
-
-  def set_result
-    @result = @test_passage.result
   end
 end
