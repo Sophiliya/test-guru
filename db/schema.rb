@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2020_04_14_160648) do
     t.string "image"
     t.integer "attempts_number"
     t.integer "level"
-    t.string "rule_code"
-    t.integer "rule_priority"
     t.bigint "category_id"
     t.bigint "test_id"
     t.datetime "created_at", null: false

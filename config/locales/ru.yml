@@ -41,6 +41,8 @@ ru:
         category_id: 'Категория'
         test_id: 'Тест'
         count: 'Количество'
+        select_test: 'Выберите тест'
+        rules: 'Укажите правила'
 
   tests:
     index:

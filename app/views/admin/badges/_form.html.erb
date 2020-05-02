@@ -2,8 +2,7 @@
   <div class="form-group">
     <%= render 'shared/errors', resource: @badge %>
 
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :name, class: "form-control mb-3" %>
+    <h6><%= t('activerecord.attributes.badge.rules') %></h6>
 
     <%= form.label :attempts_number %>
     <%= form.number_field :attempts_number, id: :attempts_number, class: "form-control mb-3" %>
@@ -15,7 +14,7 @@
       <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
     </p>
     <p>
-      <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true, class: "form-control" %>
+      <%= form.collection_select :test_id, Test.all, :id, :title, include_blank: "#{t('activerecord.attributes.badge.select_test')}", class: "form-control" %>
     </p>
 
     <%= form.submit t('buttons.submit'), class: "btn btn-primary mt-3" %>

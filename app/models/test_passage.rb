@@ -19,6 +19,10 @@ class TestPassage < ApplicationRecord
     correct_questions.to_f/test.questions.count
   end
 
+  def passed?
+    result >= 0.85 ? true : false
+  end
+
   private
 
   def before_validation_set_first_question
