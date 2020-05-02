@@ -5,6 +5,11 @@
   <td><%= test.category.title %></td>
   <td><%= test.author&.full_name %></td>
   <td align="center"><%= test.questions.count %></td>
+  <td align="center"><%= test.duration %></td>
   <% disabled = test.questions.any? ? false : true %>
-  <td><%= button_to t('buttons.start'), start_test_path(test), class: "btn btn-primary", disabled: disabled %></td>
+  <td><%= button_to t('buttons.start'), start_test_path(test),
+                    id: "start-test-#{test.id}",
+                    class: "btn btn-primary start-test",
+                    disabled: disabled,
+                    data: { duration: test.duration, test_id: test.id } %></td>
 </tr>

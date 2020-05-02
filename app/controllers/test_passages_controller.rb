@@ -7,14 +7,14 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    TestsMailer.completed_test(@test_passage).deliver_now
     @result = @test_passage.result
   end
 
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now 
+    if @test_passage.time_expired? || @test_passage.completed?
       redirect_to result_test_passage_path(@test_passage)
     else
       redirect_to test_passage_path(@test_passage)

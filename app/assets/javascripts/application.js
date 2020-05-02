@@ -58,4 +58,36 @@ function setProgressBar() {
   }
 }
 
+function setTestTimer() {
+  let duration = $('.timer').data('duration')
+
+  if (duration) {
+    let countDownDateTime = new Date().getTime() + duration * 60 * 1000
+
+    let t = setInterval(function() {
+      let dateTimeNow = new Date().getTime();
+      let distance = countDownDateTime - dateTimeNow
+
+      let hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+      document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s "
+
+      if (distance < 1000) {
+        clearInterval(t);
+        alert('Время истекло.')
+        finishTestPassage()
+      }
+    }, 1000);
+  }
+}
+
+function finishTestPassage() {
+  let testPassageId = window.location.pathname.replace('/test_passages/', '')
+  let host = window.location.origin
+
+  window.location.href = `${host}/test_passages/${testPassageId}/result`
+}
+
 

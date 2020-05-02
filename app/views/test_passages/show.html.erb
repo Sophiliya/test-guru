@@ -1,9 +1,7 @@
 <div class="container">
+  <h3 class="timer" id="timer" data-id=<%= @test_passage.test.id %> data-duration=<%= @test_passage.test.duration %> >
+  </h3>
   <div class="row justify-content-center">
-    <%= content_tag :div, id: 'progress-bar', data: { questions_count: @test_passage.test.questions.count, question_number: @number } do %>
-      <div id="progress-bar-line"></div>
-    <% end %>
-
     <div class="">
       <h1 align="center"><%= "#{t('test_passages.show.header')} #{@test_passage.test.title}" %></h1>
 
@@ -28,5 +26,15 @@
         </div>
       <% end %>
     </div>
+
+    <%= content_tag :div, class: 'mt-3', id: 'progress-bar', data: { questions_count: @test_passage.test.questions.count, question_number: @number } do %>
+      <div id="progress-bar-line"></div>
+    <% end %>
   </div>
 </div>
+
+<script>
+  window.onload = function exampleFunction() {
+    setTestTimer()
+  }
+</script>

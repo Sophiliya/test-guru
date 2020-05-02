@@ -8,6 +8,7 @@
   <td><%= test.category.title %></td>
   <td><%= test.author&.full_name %></td>
   <td align="center"><%= test.questions.count %></td>
+  <td><%= test.duration %></td>
   <td><%= link_to t('buttons.show'), admin_test_path(test), class: "btn btn-primary" %></td>
   <td>
     <%= link_to t('buttons.edit'), edit_admin_test_path(test),
