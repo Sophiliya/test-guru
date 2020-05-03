@@ -8,6 +8,7 @@
         <th>#</th>
         <th></th>
         <th><%= t('activerecord.attributes.badge.name') %></th>
+        <th><%= t('activerecord.attributes.badge.rule') %></th>
         <th><%= t('activerecord.attributes.badge.count') %></th>
       </tr>
       </thead>
@@ -17,6 +18,7 @@
           <td><%= index %></td>
           <td><%= image_tag ub.badge.image, class: "user-badge-img" %></td>
           <td><%= ub.badge.name %></td>
+          <td><%= ub.badge.rule %></td>
           <td><%= ub.count %></td>
         </tr>
       <% end %>

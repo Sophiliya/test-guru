@@ -14,10 +14,4 @@ class Test < ApplicationRecord
   scope :middle, -> { where('level IN (?)', (2..4)) }
   scope :complicated, -> { where('level >= ?', 5) }
   scope :by_category, -> (category_title) { includes(:category).where(categories: { title: category_title }) }
-
-  def self.by_category(category_title)
-    Test.includes(:category).where(
-      categories: { title: category_title }
-    ).order(title: :desc).map(&:title)
-  end
 end

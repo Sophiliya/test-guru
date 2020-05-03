@@ -3,36 +3,39 @@ class SetBadgeService
     @test_passage = test_passage
     @user = @test_passage.user
     @test = @test_passage.test
-    @badge = find_badge
   end
 
   def call
-    return unless @badge.present? && rules_satisfied?
+    @badge = find_badge
+    return unless @badge.present?
 
-    assign_badge
-    @badge
+    define_award_methods
+
+    if send("#{@badge.rule}_award?", @badge)
+      assign_badge
+      @badge
+    end
   end
 
   private
 
   def find_badge
-    by_category = Badge.find_by(rule: "#{@test.category.title.downcase}")
-    by_level    = Badge.find_by(rule: "level_#{@test.level}")
-    by_attempt  = Badge.find_by(rule: "attempt_#{attempts_number}")
-
-    by_category || by_level || by_attempt
+    rules = ["#{@test.category.title.downcase}", "level_#{@test.level}", "attempt_#{attempts_number}"]
+    Badge.find_by(rule: Badge.rules.keys & rules)
   end
 
-  def rules_satisfied?
-    case @badge.rule
-    when 'backend', 'frontend'
-      passed_by_category.count == Test.by_category(@badge.rule.capitalize).count
-    when 'level_1', 'level_2'
-      passed_by_level.count == Test.where(level: @badge.rule.last.to_i).count
-    when 'attempt_1', 'attempt_2'
-      attempts_number == @badge.rule.last.to_i
-    else
-      false
+  def define_award_methods
+    self.class.define_method("#{@badge.rule}_award?".to_sym) do |badge|
+      case badge.rule
+      when 'backend', 'frontend'
+        passed_by_category.pluck(:test_id).uniq.sort == Test.by_category(badge.rule.capitalize).pluck(:id).sort
+      when 'level_1', 'level_2'
+        passed_by_level.pluck(:test_id).uniq.sort == Test.where(level: badge.rule.last.to_i).pluck(:id).sort
+      when 'attempt_1', 'attempt_2'
+        attempts_number == badge.rule.last.to_i
+      else
+        false
+      end
     end
   end
 
