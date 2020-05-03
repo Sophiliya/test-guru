@@ -8,7 +8,7 @@ class TestPassagesController < ApplicationController
 
   def result
     @result = @test_passage.result
-    @badge  = SetBadgeService.new(test_passage: @test_passage, user: current_user).call
+    @badge  = SetBadgeService.new(test_passage: @test_passage).call if @test_passage.success
     TestsMailer.completed_test(@test_passage).deliver_now
   end
 

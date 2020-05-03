@@ -36,13 +36,7 @@ ru:
         correct: 'Правильный'
       badge:
         name: 'Название'
-        attempts_number: 'Количество попыток'
-        level: 'Уровень'
-        category_id: 'Категория'
-        test_id: 'Тест'
-        count: 'Количество'
-        select_test: 'Выберите тест'
-        rules: 'Укажите правила'
+        rule: 'Название правила'
 
   tests:
     index:

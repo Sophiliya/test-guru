@@ -53,11 +53,7 @@ en:
         body: 'Question'
       badge:
         name: 'Title'
-        attempts_number: 'Number of attempts'
-        level: 'Level'
-        category_id: 'Category'
-        test_id: 'Test'
-        count: 'Number'
+        rule: "Rule's title"
 
   tests:
     index:
