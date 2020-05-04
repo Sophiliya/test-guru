@@ -1,0 +1,12 @@
+<tr>
+  <td><%= badge.id %></td>
+  <td><%= image_tag badge.image, class: "admin-badge-img" %></td>
+  <td><%= badge.name %></td>
+  <td><%= badge.rule %></td>
+  <td>
+    <%= link_to t('buttons.edit'), edit_admin_badge_path(badge), class: "btn btn-warning" %>
+  </td>
+  <td>
+    <%= link_to t('buttons.delete'), admin_badge_path(badge), method: :delete, data: { confirm: t('confirmations.sure') }, class: "btn btn-danger" %>
+  </td>
+</tr>

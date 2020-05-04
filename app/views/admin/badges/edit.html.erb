@@ -1,0 +1,8 @@
+<div class="row justify-content-center">
+  <div class="col col-md-4">
+    <h4 align="center"><%= t('badges.edit.header', badge_name: @badge.name) %></h4>
+
+    <%= render 'form' %>
+    <%= link_to t('buttons.back'), admin_badges_path, class: "btn btn-primary" %>
+  </div>
+</div>

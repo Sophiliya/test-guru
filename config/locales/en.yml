@@ -51,6 +51,9 @@ en:
         title: 'Category'
       question:
         body: 'Question'
+      badge:
+        name: 'Title'
+        rule: "Rule's title"
 
   tests:
     index:
@@ -64,6 +67,7 @@ en:
     result:
       success: 'The test was successfully passed'
       fail: 'The test was failed'
+      badge: 'Congratulations! You own a badge: %{title}'
     gist:
       success: 'Gist was successfully created: %{url}'
       failure: 'An error occured while saving gist!'
@@ -72,6 +76,16 @@ en:
   gists:
     index:
       header: 'Gists'
+  badges:
+    index:
+      header: 'Badges'
+      attempts_number:
+        unlimited: 'unlimited'
+      all: 'all'
+    new:
+      header: 'New badge'
+  user_badges:
+    header: 'My badges'
 
   admin:
     tests:
@@ -97,6 +111,7 @@ en:
     more: 'more'
     feedback: 'Feedback'
     submit: 'Submit'
+    back: 'Back'
   confirmations:
     sure: 'Are you sure?'
   feedback:

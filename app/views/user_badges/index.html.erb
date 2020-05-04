@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+  <div class="col">
+    <h1 align="center"><%= t('user_badges.header') %></h1>
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th></th>
+        <th><%= t('activerecord.attributes.badge.name') %></th>
+        <th><%= t('activerecord.attributes.badge.rule') %></th>
+        <th><%= t('activerecord.attributes.badge.count') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @user_badges.each.with_index(1) do |ub, index| %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= image_tag ub.badge.image, class: "user-badge-img" %></td>
+          <td><%= ub.badge.name %></td>
+          <td><%= ub.badge.rule %></td>
+          <td><%= ub.count %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

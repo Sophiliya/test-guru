@@ -7,6 +7,12 @@ module TestPassagesHelper
     content_tag :p, "#{result_type == 'success' ? t('test_passages.result.success') : t('test_passages.result.fail')}"
   end
 
+  def show_badge
+    if @badge
+      image_tag @badge.image, class: 'badge-img'
+    end
+  end
+
   private
 
   def result_type
