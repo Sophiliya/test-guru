@@ -13,5 +13,4 @@ class Test < ApplicationRecord
   scope :simple, -> { where('level IN (?)', [0, 1]) }
   scope :middle, -> { where('level IN (?)', (2..4)) }
   scope :complicated, -> { where('level >= ?', 5) }
-  scope :by_category, -> (category_title) { includes(:category).where(categories: { title: category_title }) }
 end

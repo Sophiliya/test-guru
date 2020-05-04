@@ -1,5 +1,5 @@
 class Badge < ApplicationRecord
-  enum rule: { backend: 0, frontend: 1, level_1: 2, level_2: 3, attempt_1: 4, attempt_2: 5 }
+  enum rule: { category_complete: 0, level_complete: 1, first_attempt: 2, second_attempt: 3 }
 
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
